@@ -1,1 +1,1 @@
-1.DELETE FROM authors WHERE authorId IN (11, 12) //manau blogai, nes panaikinu tik is vienos lenteles
+1.DELETE FROM authors WHERE authorId IN (11, 12);
