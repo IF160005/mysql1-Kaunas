@@ -1,0 +1,9 @@
+1.CREATE TABLE authors_books (authorId int, bookId int);
+2.INSERT INTO authors_books (authorId,bookId) SELECT authorId,bookId FROM books WHERE authorId IS NOT NULL;
+INSERT INTO authors_books(authorId,bookId) VALUES (2,9),(6,5),(9,7);
+ALTER TABLE books DROP COLUMN authorId;
+3.SELECT books.title, GROUP_CONCAT(authors.name) FROM authors LEFT JOIN authors_books ON authors.authorId = authors_books.authorId
+LEFT JOIN books ON books.bookId = authors_books.bookId GROUP BY books.title;
+4.ALTER TABLE books ADD COLUMN title1 VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_lithuanian_ci DEFAULT NULL AFTER title;
+UPDATE books SET title1=title;
+
